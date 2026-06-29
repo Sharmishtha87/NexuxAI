@@ -89,12 +89,12 @@ function startServer() {
 
   // --- Monolithic Deployment Logic ---
   // Serve the static frontend files from the Vite build output
-  // app.use(express.static(path.join(__dirname, "../frontend/dist")));
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
   // Catch-all route to serve the React app for any unrecognized paths (Client-Side Routing)
-  // app.get(/(.*)/, (req, res) => {
-  //   res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
-  // });
+  app.get(/(.*)/, (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+  });
   // -----------------------------------
 
   let user = "test";
