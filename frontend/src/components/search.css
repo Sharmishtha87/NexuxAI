@@ -1,0 +1,168 @@
+.search-page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.search-page-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+}
+
+.explore-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-top: -16px;
+  margin-bottom: 32px;
+}
+
+.search-results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.search-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.search-card {
+  display: block;
+  text-decoration: none;
+  background: linear-gradient(145deg, rgba(20, 20, 25, 0.9) 0%, rgba(30, 30, 40, 0.8) 100%);
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: visible; /* To allow glow to spill over */
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* The Animated Gradient Border */
+.search-card::before {
+  content: "";
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(270deg, #ff007f, #7928ca, #00d2ff, #ff007f);
+  background-size: 300% 300%;
+  border-radius: 18px;
+  z-index: -1;
+  animation: rotateBorder 4s ease infinite;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+/* The Glowing Aura */
+.search-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(270deg, #ff007f, #7928ca, #00d2ff, #ff007f);
+  background-size: 300% 300%;
+  border-radius: 18px;
+  z-index: -2;
+  filter: blur(15px);
+  opacity: 0;
+  animation: rotateBorder 4s ease infinite;
+  transition: opacity 0.4s ease;
+}
+
+.search-card:hover {
+  transform: translateY(-8px) scale(1.03) rotate(-1deg);
+}
+
+.search-card:hover::before {
+  opacity: 1;
+}
+
+.search-card:hover::after {
+  opacity: 0.8;
+}
+
+.search-card h4 {
+  color: var(--accent-blue);
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+.search-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0 0 12px 0;
+}
+
+.owner-badge {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+/* Explore specifics */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.explore-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.explore-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.explore-card-header h4 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.star-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+}
+
+.explore-card-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.search-card {
+  cursor: pointer;
+}
+
+
+@keyframes rotateBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+

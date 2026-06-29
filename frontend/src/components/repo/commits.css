@@ -1,0 +1,76 @@
+.commits-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.commits-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.commits-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.commit-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background 0.2s;
+}
+
+.commit-row:last-child {
+  border-bottom: none;
+}
+
+.commit-row:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.commit-info {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.commit-icon {
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.commit-details h4 {
+  margin: 0 0 4px 0;
+  color: var(--text-primary);
+  font-size: 1.05rem;
+}
+
+.commit-details p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.commit-author {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.commit-sha {
+  font-family: monospace;
+  color: var(--accent-blue);
+  background: rgba(88, 166, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}

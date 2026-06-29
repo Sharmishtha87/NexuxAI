@@ -1,0 +1,106 @@
+.pr-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.pr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.new-pr-btn {
+  padding: 6px 16px;
+  background: #238636;
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.pr-create-form-container {
+  padding: 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.pr-create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pr-create-form select,
+.pr-create-form input,
+.pr-create-form textarea {
+  padding: 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+}
+
+.submit-pr-btn {
+  align-self: flex-start;
+  padding: 8px 20px;
+  background: #238636;
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+}
+
+.pr-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.pr-info {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.pr-icon.open { color: #3fb950; }
+.pr-icon.merged { color: #a371f7; }
+.pr-icon.closed { color: #f85149; }
+
+.pr-details h4 {
+  margin: 0 0 4px 0;
+  color: var(--text-primary);
+}
+
+.pr-details p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.pr-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.merge-btn {
+  background: #a371f7;
+  color: white;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+}
+
+.close-pr-btn {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+}

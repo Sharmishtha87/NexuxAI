@@ -1,0 +1,7 @@
+node_modules
+backend/.env
+frontend/.env
+dist
+build
+.DS_Store
+backend/serviceAccountKey.json
