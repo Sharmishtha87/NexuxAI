@@ -89,12 +89,12 @@ function startServer() {
 
   // --- Monolithic Deployment Logic ---
   // Serve the static frontend files from the Vite build output
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+  // app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
   // Catch-all route to serve the React app for any unrecognized paths (Client-Side Routing)
-  app.get(/(.*)/, (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
-  });
+  // app.get(/(.*)/, (req, res) => {
+  //   res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+  // });
   // -----------------------------------
 
   let user = "test";
@@ -130,7 +130,7 @@ function startServer() {
     socket.on("joinFileRoom", (data) => {
       const room = `${data.repoId}_${data.filePath}`;
       socket.join(room);
-      
+
       if (!roomUsers[room]) roomUsers[room] = [];
       const existingUser = roomUsers[room].find(u => u.socketId === socket.id);
       if (!existingUser) {
@@ -145,7 +145,7 @@ function startServer() {
     socket.on("leaveFileRoom", (data) => {
       const room = `${data.repoId}_${data.filePath}`;
       socket.leave(room);
-      
+
       if (roomUsers[room]) {
         roomUsers[room] = roomUsers[room].filter(u => u.socketId !== socket.id);
         io.to(room).emit("roomUsersUpdate", roomUsers[room]);
